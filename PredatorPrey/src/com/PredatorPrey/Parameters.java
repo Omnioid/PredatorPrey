@@ -1,17 +1,17 @@
 package com.PredatorPrey;
 
 public class Parameters {
-    public int fieldWidth = 1600;
-    public int fieldHeight = 1000;
-    public int entityCount = 4;
-    public double thrust = 1.0;
-    public double maxSpeed = 100.0;
-    public double friction = 0.01;
-    public int drawStyle = 0;
-    public int drawColor = 0;
-    public int drawSize = 1;
-    public boolean drawCenter = false;
-    public boolean traceCenter = false;
-    public boolean wallBounce = false;
+    private int fieldWidth = 1600;
+    private int fieldHeight = 1000;
+    private int entityCount = 4;
+    private double thrust = 1.0;
+    private double maxSpeed = 100.0;
+    private double friction = 0.01;
+    private int drawStyle = 0;
+    private int drawColor = 0;
+    private int drawSize = 1;
+    private boolean drawCenter = false;
+    private boolean traceCenter = false;
+    private boolean wallBounce = false;
     
 }

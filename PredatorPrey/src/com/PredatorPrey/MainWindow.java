@@ -47,7 +47,10 @@ public class MainWindow {
 //        window.setVisible(true);
 
         quitButton.addActionListener(e -> window.dispose());
-        beginButton.addActionListener(e -> Simulation.begin());
+        beginButton.addActionListener(e -> {
+            window.removeAll();
+            Simulation.begin();
+        });
 
     }
 
