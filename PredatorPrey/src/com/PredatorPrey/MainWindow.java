@@ -12,14 +12,15 @@ public class MainWindow {
         window = new JFrame();
         window.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         window.setTitle("Predator/Prey");
-        window.setSize(800, 500); //will be changed for the simulation to the settings in the options menu
-        window.setLocationRelativeTo(null);//sets to center of screen
+        window.setUndecorated(true);
+        window.setExtendedState(JFrame.MAXIMIZED_BOTH); //makes window full screen
+        window.setResizable(false);
         window.getContentPane().setBackground(Color.BLACK);
 
         JLabel menuArt = new JLabel("<html>Predator/Prey</html>", JLabel.CENTER);
-        Font menuFont = new Font("Serif", Font.BOLD, 36);
+        Font menuFont = new Font("Serif", Font.BOLD, 70);
         JLabel menuUnderline = new JLabel("<html>-A Childhood Game-</html>", JLabel.CENTER);
-        Font menuUnderlineFont = new Font("Serif", Font.ITALIC, 18);
+        Font menuUnderlineFont = new Font("Serif", Font.ITALIC, 40);
         menuArt.setFont(menuFont);
         menuUnderline.setFont(menuUnderlineFont);
         menuArt.setForeground(Color.GREEN);
@@ -34,22 +35,25 @@ public class MainWindow {
         JPanel buttonPanel = new JPanel();
 
         JButton beginButton = createTransparentButton("Begin");
-        JButton optionsButton = createTransparentButton("Options");
         JButton quitButton = createTransparentButton("Quit");
 
         buttonPanel.setBackground(Color.BLACK);
 
         buttonPanel.add(beginButton);
-        buttonPanel.add(optionsButton);
         buttonPanel.add(quitButton);
 
         window.add(buttonPanel, BorderLayout.SOUTH);
 
 //        window.setVisible(true);
+
+        quitButton.addActionListener(e -> window.dispose());
+        beginButton.addActionListener(e -> Simulation.begin());
+
     }
 
     private static JButton createTransparentButton(String text) {//makes a transparent button
         JButton button = new JButton(text);
+        button.setFont(new Font("Serif", Font.BOLD, 30));
         button.setOpaque(false);
         button.setContentAreaFilled(false);
         button.setBorderPainted(false);
