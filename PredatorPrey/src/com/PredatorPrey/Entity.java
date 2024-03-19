@@ -4,8 +4,12 @@ public class Entity {
     int id;
     int target;
     int flee;
-    int guard;
-    int fear;
+    int client;
+    int assassin;
+    double maxForce = 1.0; //This represents the maximum thrust that an entity can exert upon itself
+    int size = 1; //Will be represented as a radius when drawn
+    double mass = 3.14 * (size * size); //naive mass calculation, based on volume
+    private double maxSpeed = 100.0;
     Vector currentPosition;
     Vector currentVelocity;
     Vector previousPosition;
